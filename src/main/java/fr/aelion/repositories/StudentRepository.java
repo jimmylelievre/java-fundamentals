@@ -6,16 +6,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository {
-   public List<Student> students = new ArrayList<>();
+   private List<Student> students = new ArrayList<>();
     public StudentRepository() {
         this.populate();
+    }
+
+    public boolean findByLoginAndPassword(String login, String password){
+        for (Student student : this.students){
+            if (student.getUsername().equals(login ) && student.getPassword().equals(password) ){
+
+                return true;
+            }
+        }
+        return false;
+    }
+    public int size(){
+        return this.students.size();
     }
 
     private void populate(){
         // make an instance of student
         Student student = new Student("lelievre", "jimmy", "jimmy@hotmail.fr");
-        student.setUsername("jim");
-        student.setPassword("dfdf");
+        student.setUsername("bond");
+        student.setPassword("007");
 
         // Add student to list
         this.students.add(student);
