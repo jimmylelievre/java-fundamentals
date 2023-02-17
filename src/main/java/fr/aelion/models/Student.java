@@ -5,6 +5,8 @@ public class Student {
     public String firstName;
     private String username;
     private String email;
+    private String password;
+    private Boolean isLoggedIn = false;
 
     public void setUsername(String username) {
         this.username = username;
@@ -13,9 +15,6 @@ public class Student {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    private String password;
-    private Boolean isLoggedIn = false;
 
     public Student() {
     }
