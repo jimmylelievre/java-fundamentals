@@ -11,14 +11,14 @@ public class StudentRepository {
         this.populate();
     }
 
-    public boolean findByLoginAndPassword(String login, String password){
+    public Student findByLoginAndPassword(String login, String password){
         for (Student student : this.students){
             if (student.getUsername().equals(login ) && student.getPassword().equals(password) ){
 
-                return true;
+                return student;
             }
         }
-        return false;
+        return null;
     }
     public int size(){
         return this.students.size();
